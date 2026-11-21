@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * Banda de fotos de gente real usando el T1.
- * Las fotos pueden ser imágenes editoriales remotas o archivos propios en /public/render/.
+ * Las fotos pueden ser imágenes editoriales libres o archivos propios en /public/render/.
  */
 const SLOTS = [
   {

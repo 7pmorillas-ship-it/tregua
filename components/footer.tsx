@@ -53,7 +53,7 @@ export function Footer() {
 
             <p className="mt-5 max-w-sm text-pretty text-[13px] leading-relaxed text-muted">
               No vendemos nostalgia ni una cura milagrosa. Vendemos un móvil que hace lo justo,
-              para que el tiempo vuelva a ser tuyo. Diseñado y soportado desde España.
+              para que el tiempo vuelva a ser tuyo. Comercializado y soportado desde España.
             </p>
 
             <div className="mt-6 flex flex-col gap-2">
@@ -107,10 +107,10 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col gap-4 border-t border-line/[0.07] py-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-[9px] tracking-[0.1em] text-muted/50">
-            © 2026 TREGUA · HECHO EN ESPAÑA · PRECIOS CON IVA
+            © 2026 TREGUA · COMERCIALIZADO DESDE ESPAÑA · PRECIOS CON IVA
           </p>
           <p className="font-mono text-[9px] tracking-[0.1em] text-muted/40">
-            TREGUA T1 · Fabricado en España · 2026
+            TREGUA T1 · Comercializado desde España · 2026
           </p>
         </div>
       </div>

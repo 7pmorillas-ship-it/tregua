@@ -47,7 +47,7 @@ export function Life() {
               loading="lazy"
             />
             <figcaption className="mt-2.5 text-[11px] text-muted">
-              Imagen real de contexto · licencia CC BY 2.0 · Wikimedia Commons
+              Una escena cotidiana. Una vida más presente.
             </figcaption>
           </figure>
         </Reveal>
@@ -63,7 +63,7 @@ export function Life() {
             loading="lazy"
           />
           <figcaption className="mt-2.5 text-[11px] text-muted">
-            Imagen real de contexto · licencia CC BY-SA 4.0 · Wikimedia Commons
+            El teléfono en su sitio, no en el centro de todo.
           </figcaption>
         </figure>
       </Reveal>

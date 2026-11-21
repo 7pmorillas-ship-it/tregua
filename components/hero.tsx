@@ -14,7 +14,7 @@ export function Hero() {
       <div className="shell">
         <div className="flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] text-muted">
           <span className="h-1 w-1 rounded-full bg-accent" />
-          TELÉFONO DETOX · HECHO EN ESPAÑA
+          TELÉFONO DETOX · COMERCIALIZADO DESDE ESPAÑA
         </div>
 
         <h1 className="mt-6 animate-fade-up text-balance text-[40px] font-semibold leading-[0.98] tracking-tightest sm:text-[54px] lg:text-[70px] xl:text-[80px]">
