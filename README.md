@@ -32,7 +32,7 @@ app/
 components/
   navbar.tsx            flotante, menú móvil, toggle claro/oscuro
   hero.tsx              headline, CTAs, render del dispositivo, precio
-  stats.tsx             cinta de datos + panel oscuro con 3 cifras de uso
+  life.tsx              fotos reales (CC) + las tres cifras de uso, sin tarjetas
   philosophy.tsx        bento "entra / se queda fuera"
   app-checker.tsx       buscador de apps: permitida, bloqueada o "según el caso"
   people.tsx            banda de fotos de gente real (aparece al haber fotos)
