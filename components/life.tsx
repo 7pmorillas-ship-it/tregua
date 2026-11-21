@@ -4,6 +4,10 @@ import { Reveal } from "@/components/reveal";
 export function Life() {
   return (
     <section id="datos" className="shell scroll-mt-24 py-16 sm:py-24">
+      <div className="mb-10 max-w-[46ch]">
+        <p className="mono-label text-accent">[ EL COSTE INVISIBLE ]</p>
+        <p className="mt-3 text-[13px] leading-relaxed text-muted">Antes de hablar del teléfono, hablemos de lo que quieres recuperar.</p>
+      </div>
       <div className="grid gap-x-12 gap-y-10 md:grid-cols-12">
         <Reveal className="md:col-span-7">
           <h2 className="max-w-[22ch] text-[clamp(28px,4.6vw,48px)] font-medium leading-[1] tracking-[-0.03em] text-fg">
@@ -15,15 +19,16 @@ export function Life() {
             años, y casi nadie sabe decir en qué se le ha ido la tarde.
           </p>
 
-          <dl className="mt-10 grid grid-cols-1 gap-x-8 gap-y-6 border-t border-line/[0.12] pt-6 sm:grid-cols-3">
+          <dl className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-3">
             {STATS.map((stat) => (
-              <div key={stat.label}>
-                <dd className="font-mono text-[24px] leading-none tracking-[-0.02em] text-fg">
+              <div key={stat.label} className="rounded-2xl border border-line/10 bg-card px-4 py-5 sm:px-5">
+                <dd className="font-mono text-[clamp(27px,3.8vw,42px)] leading-none tracking-[-0.04em] text-accent">
                   {stat.value}
                 </dd>
-                <dt className="mt-2 text-[12.5px] leading-snug text-muted">
+                <dt className="mt-3 text-[12.5px] leading-snug text-fg/75">
                   {stat.label}
                 </dt>
+                <p className="mt-1 text-[11px] text-muted">Cada día. Sin darte cuenta.</p>
               </div>
             ))}
           </dl>
@@ -42,7 +47,7 @@ export function Life() {
               loading="lazy"
             />
             <figcaption className="mt-2.5 text-[11px] text-muted">
-              Foto: Shixart1985 · CC BY 2.0, vía Wikimedia Commons
+              Imagen real de contexto · licencia CC BY 2.0 · Wikimedia Commons
             </figcaption>
           </figure>
         </Reveal>
@@ -58,7 +63,7 @@ export function Life() {
             loading="lazy"
           />
           <figcaption className="mt-2.5 text-[11px] text-muted">
-            Foto: W.carter · CC BY-SA 4.0, vía Wikimedia Commons
+            Imagen real de contexto · licencia CC BY-SA 4.0 · Wikimedia Commons
           </figcaption>
         </figure>
       </Reveal>

@@ -4,7 +4,6 @@ import { Gallery } from "@/components/gallery";
 import { Philosophy } from "@/components/philosophy";
 import { AppChecker } from "@/components/app-checker";
 import { Life } from "@/components/life";
-import { People } from "@/components/people";
 import { Profiles } from "@/components/profiles";
 import { Specs } from "@/components/specs";
 import { Configurator } from "@/components/configurator";
@@ -53,13 +52,12 @@ export default function Home() {
       <main>
         <Hero />
         <Life />
+        <Philosophy />
         <Gallery />
         <VideoPlaceholder />
-        <Philosophy />
         <div className="shell pb-4">
           <AppChecker />
         </div>
-        <People />
         <ContactCta />
         <Profiles />
         <Specs />
