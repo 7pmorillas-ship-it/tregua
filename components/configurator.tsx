@@ -33,6 +33,12 @@ export function Configurator() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ mode }),
       });
+      // En la demo estática (GitHub Pages) no existe /api/checkout.
+      if (res.status === 404) {
+        setStatus("demo");
+        setMessage("Esta demo pública no procesa pedidos reales.");
+        return;
+      }
       const data = (await res.json()) as { url?: string; demo?: boolean; error?: string };
       if (res.ok && data.url) {
         window.location.assign(data.url);

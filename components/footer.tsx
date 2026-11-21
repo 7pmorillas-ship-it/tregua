@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
 
 const COLUMNS = [
@@ -90,12 +91,12 @@ export function Footer() {
                 <ul className="mt-3 space-y-2">
                   {col.links.map((link) => (
                     <li key={link.label}>
-                      <a
+                      <Link
                         href={link.href}
                         className="text-[12.5px] text-muted transition-colors hover:text-fg"
                       >
                         {link.label}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
