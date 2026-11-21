@@ -1,174 +1,173 @@
-import type { ReactNode } from "react";
 import { Device } from "@/components/device";
+import { RealPhoto } from "@/components/photo";
+import { HomeScreen } from "@/components/phone/screen-ui";
 import { Reveal } from "@/components/reveal";
+import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
 
 function Frame({
-  children,
-  caption,
   index,
+  label,
+  caption,
+  children,
   className,
+  tall,
 }: {
-  children: ReactNode;
-  caption: string;
   index: string;
+  label: string;
+  caption: string;
+  children: ReactNode;
   className?: string;
+  tall?: boolean;
 }) {
   return (
-    <div
-      className={`group relative overflow-hidden rounded-2xl border border-line/[0.08] bg-[linear-gradient(160deg,#F0EDE4_0%,#E7E3D8_100%)] transition-all duration-500 hover:border-line/20 ${className ?? ""}`}
+    <figure
+      className={cn(
+        "group relative overflow-hidden rounded-2xl border border-line/[0.07] bg-[linear-gradient(158deg,#F3F0E8,#E6E2D6)]",
+        "shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_24px_60px_-40px_rgba(38,30,22,0.55)]",
+        className,
+      )}
     >
-      <div className="flex h-full items-center justify-center p-5 sm:p-7">
-        {children}
+      <div
+        className={cn(
+          "relative flex w-full items-center justify-center overflow-hidden",
+          tall ? "h-[420px] sm:h-[520px] lg:h-[600px]" : "h-[300px] sm:h-[360px]",
+        )}
+      >
+        <div className="noise pointer-events-none absolute inset-0 opacity-[0.4]" />
+        <div className="relative flex h-full w-full items-center justify-center p-6 transition-transform duration-[900ms] ease-out-expo group-hover:scale-[1.04]">
+          {children}
+        </div>
+        <span className="mono-label absolute left-5 top-5 text-fg/45">
+          {index}
+        </span>
       </div>
-      <div className="flex items-center justify-between border-t border-line/[0.07] px-4 py-2.5">
-        <span className="font-mono text-[9px] tracking-[0.14em] text-muted">{caption}</span>
-        <span className="font-mono text-[9px] tracking-[0.14em] text-muted/50">{index}</span>
-      </div>
-    </div>
+      <figcaption className="flex items-baseline justify-between gap-4 border-t border-line/[0.07] bg-card/60 px-5 py-3.5">
+        <span className="mono-label text-fg/60">{label}</span>
+        <span className="text-right text-[12px] leading-tight text-muted">
+          {caption}
+        </span>
+      </figcaption>
+    </figure>
   );
 }
 
-function CompactScreen() {
+/** Macro de pantalla: se escala el HomeScreen para que se lea como una foto de detalle. */
+function ScreenMacro() {
   return (
-    <div className="flex h-full flex-col justify-between bg-[#F2EFE6] px-3 py-2">
-      <div>
-        <div className="flex items-center justify-between font-mono text-[7px] tracking-[0.08em] text-[#8a8477]">
-          <span>TREGUA</span>
-          <span>4G · 07:42</span>
-        </div>
-        <div className="mt-2 font-mono text-[7px] uppercase tracking-[0.2em] text-[#9a9384]">
-          Jue 20 nov
-        </div>
-        <div className="text-[30px] font-light leading-none tracking-tighter text-[#1b1a16]">
-          07:42
-        </div>
-        <div className="mt-2 h-px bg-[#1b1a16]/10" />
+    <div className="relative h-full max-h-[300px] w-full max-w-[220px] overflow-hidden rounded-[22px] border border-fg/10 shadow-[0_30px_60px_-30px_rgba(30,24,18,0.6)]">
+      <div className="absolute inset-0 origin-center scale-[1.55]">
+        <HomeScreen time="07:42" selected={0} />
       </div>
-
-      <ul className="space-y-[3px]">
-        {["WhatsApp", "Maps", "Spotify", "Banco"].map((name, i) => (
-          <li
-            key={name}
-            className={`flex items-center justify-between rounded-[3px] px-1.5 py-[4px] text-[10px] ${
-              i === 0 ? "bg-[#1b1a16] text-[#F6F3EA]" : "text-[#3e3a32]"
-            }`}
-          >
-            <span>{name}</span>
-            <span className={`font-mono text-[7px] ${i === 0 ? "text-[#F6F3EA]/60" : "text-[#9a9384]"}`}>
-              {i === 0 ? "3" : i === 1 ? "12 min" : ""}
-            </span>
-          </li>
-        ))}
-      </ul>
-
-      <div className="font-mono text-[6.5px] tracking-[0.16em] text-[#a8a294]">
-        MODO ESENCIAL
-      </div>
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.55)_0%,transparent_38%)]" />
     </div>
   );
 }
 
-export function Gallery() {  return (
-    <section id="galeria" className="relative border-t border-line/[0.06] py-20 sm:py-24">
-      <div className="shell">
-        <Reveal>
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div>
-              <div className="mb-4 flex items-center gap-3">
-                <span className="h-px w-8 bg-line/25" />
-                <span className="mono-label">El objeto</span>
-              </div>
-              <h2 className="text-3xl font-semibold leading-[1.05] tracking-tightest sm:text-4xl">
-                Míralo de cerca.
-              </h2>
-            </div>
-            <p className="max-w-xs text-[13px] leading-relaxed text-muted">
-              Plástico mate, teclas que se pulsan sin mirar y una pantalla que no pide nada.
-              Nada de cristal brillante que se rompa.
-            </p>
+/** Macro de teclado: una sola tecla, a tamaño de foto de producto. */
+function KeyMacro() {
+  return (
+    <div className="relative flex h-full w-full max-w-[240px] items-center justify-center">
+      <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_50%_40%,rgba(255,255,255,0.9),transparent_62%)]" />
+      <div className="relative flex h-28 w-28 flex-col items-center justify-center rounded-2xl bg-[linear-gradient(180deg,#43434a,#26262b_55%,#151518)] text-[#F5F2EA] shadow-[0_2px_0_rgba(255,255,255,0.14)_inset,0_-10px_18px_rgba(0,0,0,0.5)_inset,0_26px_40px_-18px_rgba(20,18,16,0.65)] sm:h-32 sm:w-32">
+        <span className="font-mono text-4xl font-medium leading-none sm:text-5xl">5</span>
+        <span className="mt-1.5 font-mono text-[10px] tracking-[0.32em] text-[#F5F2EA]/55">
+          JKL
+        </span>
+        <span className="absolute inset-x-4 bottom-2 h-[1px] bg-white/10" />
+      </div>
+      <div className="absolute bottom-4 left-1/2 h-6 w-32 -translate-x-1/2 rounded-full bg-fg/10 blur-md" />
+    </div>
+  );
+}
+
+export function Gallery() {
+  return (
+    <section id="galeria" className="shell scroll-mt-28 py-20 sm:py-28">
+      <Reveal>
+        <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="mono-label text-fg/50">[ CÓMO ES DE VERDAD ]</p>
+            <h2 className="mt-4 max-w-[16ch] text-[clamp(30px,5vw,54px)] font-medium leading-[0.98] tracking-[-0.03em] text-fg">
+              Míralo de cerca
+            </h2>
           </div>
+          <p className="max-w-[34ch] text-[14.5px] leading-relaxed text-muted">
+            2,8 pulgadas, 118 gramos y un teclado de verdad. Nada de cristal
+            curvado: algo que se puede dejar caer y seguir usando.
+          </p>
+        </div>
+      </Reveal>
+
+      <div className="mt-12 grid gap-4 md:grid-cols-12">
+        <Reveal className="md:col-span-7" delay={0.04}>
+          <Frame
+            index="01"
+            label="VISTA TRES CUARTOS"
+            caption="Negro mate, 118 g"
+            tall
+            className="h-full"
+          >
+            <RealPhoto
+              name="hero"
+              fallback={
+                <Device
+                  tilt
+                  className="w-[190px] sm:w-[230px] lg:w-[270px]"
+                  screen={<HomeScreen time="07:42" selected={0} />}
+                />
+              }
+            />
+          </Frame>
         </Reveal>
 
-        <div className="mt-10 grid gap-3 md:grid-cols-3">
-          <Reveal className="md:col-span-2" delay={0.04}>
-            <Frame caption="VISTA TRES CUARTOS · NEGRO MATE" index="01" className="h-full">
-              <div className="w-[180px] sm:w-[200px]">
-                <Device
-                  view="front"
-                  tilt
-                  size="md"
-                  screen={<CompactScreen />}
-                  ariaLabel="TREGUA T1 de tres cuartos"
-                />
-              </div>
-            </Frame>
-          </Reveal>
-
+        <div className="md:col-span-5">
           <Reveal delay={0.08}>
-            <Frame caption="TAPA TRASERA · CÁMARA 2 MP" index="02" className="h-full">
-              <div className="w-[145px] sm:w-[160px]">
-                <Device view="back" size="md" ariaLabel="Tapa trasera del TREGUA T1" />
-              </div>
-            </Frame>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <Frame caption="TECLADO T9 · RETROILUMINADO" index="03" className="h-full">
-              <div className="relative flex h-[200px] items-center justify-center">
-                <div
-                  aria-hidden
-                  className="absolute h-40 w-40 rounded-full bg-[radial-gradient(circle,rgba(255,150,100,0.35),transparent_65%)] blur-2xl"
-                />
-                <div className="relative flex h-[132px] w-[104px] -rotate-3 flex-col items-center justify-center gap-1 rounded-[16px] border border-white/[0.1] bg-[linear-gradient(170deg,#2f2f33,#141416_60%,#0b0b0d)] shadow-[0_24px_50px_-20px_rgba(30,24,18,0.6),inset_0_1px_0_rgba(255,255,255,0.16)]">
-                  <span className="font-mono text-[46px] leading-none text-[#f5efe1]">5</span>
-                  <span className="font-mono text-[9px] tracking-[0.18em] text-[#a29c8d]">JKL</span>
-                </div>
-              </div>
-            </Frame>
-          </Reveal>
-
-          <Reveal className="md:col-span-2" delay={0.12}>
-            <Frame caption='PANTALLA 2,8" · INTERFAZ LIMPIA' index="04" className="h-full">
-              <div className="w-full max-w-[420px] overflow-hidden rounded-[10px] border border-[#1b1a16]/15 bg-[#F2EFE6] shadow-[0_30px_60px_-35px_rgba(40,32,24,0.55)]">
-                <div className="flex items-center justify-between px-4 pt-3 font-mono text-[9px] tracking-[0.08em] text-[#8a8477]">
-                  <span>TREGUA</span>
-                  <span className="flex gap-2">
-                    <span>4G</span>
-                    <span>07:42</span>
-                  </span>
-                </div>
-                <div className="flex items-end justify-between px-4 pb-3 pt-2">
-                  <div>
-                    <div className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#9a9384]">
-                      Jue 20 nov
-                    </div>
-                    <div className="text-[46px] font-light leading-none tracking-tighter text-[#1b1a16]">
-                      07:42
-                    </div>
-                  </div>
-                  <div className="pb-1 text-right">
-                    <div className="font-mono text-[9px] text-[#7d776a]">BUENOS DÍAS</div>
-                    <div className="font-mono text-[9px] text-[#b4451a]">MODO ESENCIAL</div>
-                  </div>
-                </div>
-                <div className="mx-4 h-px bg-[#1b1a16]/10" />
-                <ul className="grid grid-cols-2 gap-x-6 px-4 py-3">
-                  {["WhatsApp", "Maps", "Spotify", "Banco"].map((name, i) => (
-                    <li
-                      key={name}
-                      className="flex items-center justify-between border-b border-[#1b1a16]/[0.06] py-2 text-[11px] text-[#3e3a32] last:border-0"
-                    >
-                      <span>{name}</span>
-                      <span className="font-mono text-[8px] text-[#9a9384]">
-                        {i === 0 ? "3" : i === 1 ? "12 min" : ""}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <Frame
+              index="02"
+              label="TAPA TRASERA"
+              caption="Cámara 2 MP · altavoz"
+              tall
+            >
+              <RealPhoto
+                name="back"
+                fallback={
+                  <Device view="back" className="w-[130px] sm:w-[150px]" />
+                }
+              />
             </Frame>
           </Reveal>
         </div>
+
+        <Reveal className="md:col-span-4" delay={0.06}>
+          <Frame
+            index="03"
+            label="TECLADO T9"
+            caption="Retroiluminado, pulsación firme"
+          >
+            <RealPhoto name="keypad" fallback={<KeyMacro />} />
+          </Frame>
+        </Reveal>
+
+        <Reveal className="md:col-span-4" delay={0.1}>
+          <Frame index="04" label='PANTALLA 2,8"' caption="Interfaz sin ruido">
+            <RealPhoto name="screen" fallback={<ScreenMacro />} />
+          </Frame>
+        </Reveal>
+
+        <Reveal className="md:col-span-4" delay={0.14}>
+          <Frame index="05" label="DE FRENTE" caption="Todo lo demás, fuera">
+            <RealPhoto
+              name="front"
+              fallback={
+                <Device
+                  className="w-[140px] sm:w-[160px]"
+                  screen={<HomeScreen time="07:42" selected={2} />}
+                />
+              }
+            />
+          </Frame>
+        </Reveal>
       </div>
     </section>
   );

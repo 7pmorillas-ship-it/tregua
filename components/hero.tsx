@@ -1,5 +1,6 @@
 import { ArrowDownRight, Truck } from "lucide-react";
 import { Device } from "@/components/device";
+import { RealPhoto } from "@/components/photo";
 import { HomeScreen } from "@/components/phone/screen-ui";
 
 const STATS = [
@@ -45,16 +46,23 @@ export function Hero() {
               style={{ animationDelay: "150ms" }}
             >
               <a href="#comprar" className="btn-primary group">
-                Comprar T1 — 139 €
+                Comprar desde 134 €
                 <ArrowDownRight
                   size={16}
                   className="transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5"
                 />
               </a>
-              <a href="#simulador" className="btn-ghost">
-                Probar el simulador
+              <a href="#galeria" className="btn-ghost">
+                Ver cómo es
               </a>
             </div>
+
+            <p
+              className="mt-4 animate-fade-up font-mono text-[10px] uppercase tracking-[0.14em] text-accent"
+              style={{ animationDelay: "180ms" }}
+            >
+              Precio de lanzamiento · después del primer lote, 159 €
+            </p>
 
             <p
               className="mt-6 flex animate-fade-up items-center gap-2 font-mono text-[10px] tracking-[0.06em] text-muted"
@@ -75,12 +83,17 @@ export function Hero() {
                 [ WHATSAPP READY ]
               </span>
 
-              <Device
-                tilt
-                size="md"
-                screen={<HomeScreen time="07:42" selected={0} dial="" />}
-                ariaLabel="Teléfono TREGUA T1 en negro mate"
-                className="animate-fade-up"
+              <RealPhoto
+                name="hero"
+                fallback={
+                  <Device
+                    tilt
+                    size="md"
+                    screen={<HomeScreen time="07:42" selected={0} dial="" />}
+                    ariaLabel="Teléfono TREGUA T1 en negro mate"
+                    className="animate-fade-up"
+                  />
+                }
               />
             </div>
           </div>

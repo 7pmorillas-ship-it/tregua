@@ -39,7 +39,7 @@ export function StickyBuy() {
           <div className="flex items-center justify-between gap-3 rounded-2xl border border-line/12 bg-bg/92 p-2.5 pl-4 shadow-[0_18px_40px_-24px_rgba(40,32,24,0.5)] backdrop-blur-xl">
             <div>
               <div className="text-[12px] font-medium">TREGUA T1</div>
-              <div className="font-mono text-[10px] text-muted">139 € · envío gratis</div>
+              <div className="font-mono text-[10px] text-muted">desde 134 € · envío gratis</div>
             </div>
             <a
               href="#comprar"

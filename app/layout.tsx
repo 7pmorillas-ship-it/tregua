@@ -18,7 +18,7 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "TREGUA T1 — El teléfono que no te roba el tiempo",
   description:
-    "Teléfono de teclas con Android blindado de fábrica. WhatsApp, Maps, Spotify y tu banco funcionan. Redes sociales, navegador y Play Store, bloqueados a nivel de sistema. 139 €. Envío 24/48h desde España.",
+    "Teléfono de teclas con Android blindado de fábrica. WhatsApp, Maps, Spotify y tu banco funcionan. Redes sociales, navegador y Play Store, bloqueados a nivel de sistema. Desde 134 €. Envío 24/48h desde España.",
   keywords: [
     "teléfono detox",
     "móvil minimalista",

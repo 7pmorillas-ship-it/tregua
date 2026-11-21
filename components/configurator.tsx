@@ -13,13 +13,13 @@ import {
   X,
 } from "lucide-react";
 import { Reveal, SectionHeading } from "@/components/reveal";
-import { INCLUDED_IN_BOX, MODES, type ModeId } from "@/lib/content";
+import { INCLUDED_IN_BOX, MODES, PRICE_AFTER_LAUNCH, type ModeId } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
 type Status = "idle" | "loading" | "demo" | "error";
 
 export function Configurator() {
-  const [mode, setMode] = useState<ModeId>("essential");
+  const [mode, setMode] = useState<ModeId>("blindado");
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
   const selected = MODES.find((m) => m.id === mode) ?? MODES[0];
@@ -74,8 +74,20 @@ export function Configurator() {
                 Elige tu nivel de <span className="text-accent">tregua</span>.
               </>
             }
-            description="Mismo teléfono, dos listas blancas. Cámbialo cuando quieras escribiéndonos: no hay bloqueo de compra ni suscripción."
+            description="Dos formas de comprarlo: con el bloqueo puesto de fábrica o solo con teclas, sin filtros. Es el mismo móvil; cambia lo que trae activado."
           />
+        </Reveal>
+
+        <Reveal delay={0.04}>
+          <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl border border-cta/25 bg-cta/[0.05] px-4 py-3">
+            <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-cta">
+              Precio de lanzamiento
+            </span>
+            <span className="text-[12.5px] leading-snug text-fg/75">
+              Cuando se acabe el primer lote, el T1 pasa a {PRICE_AFTER_LAUNCH} €.
+              El envío y la garantía no cambian.
+            </span>
+          </div>
         </Reveal>
 
         <div className="mt-12 grid gap-4 lg:grid-cols-[1fr_400px] lg:items-start lg:gap-6">
@@ -117,7 +129,8 @@ export function Configurator() {
                     </div>
 
                     <p className="mt-2 text-[12px] leading-relaxed text-muted">{m.pitch}</p>
-                    <div className="mt-4 font-mono text-[20px] tracking-tight text-fg">139 €</div>
+                    <div className="mt-4 font-mono text-[20px] tracking-tight text-fg">{m.price} €</div>
+                    <p className="mt-1.5 text-[10.5px] leading-snug text-muted/80">{m.license}</p>
 
                     <ul className="mt-4 space-y-1.5">
                       {m.includes.map((inc) => (
@@ -150,7 +163,7 @@ export function Configurator() {
               {[
                 { icon: Truck, title: "Envío 24/48 h", body: "Desde España, con seguimiento." },
                 { icon: ShieldCheck, title: "2 años de garantía", body: "Y 30 días para devolverlo." },
-                { icon: Check, title: "Sin suscripción", body: "Pagas una vez. Fin." },
+                { icon: Check, title: "Sin cuotas obligatorias", body: "El blindaje se renueva si quieres." },
               ].map((item) => (
                 <div
                   key={item.title}
@@ -191,10 +204,10 @@ export function Configurator() {
                       {selected.name.toUpperCase()}
                     </div>
                     <div className="mt-1 font-mono text-[9px] text-muted/50">
-                      REF. T1-ES-{mode === "essential" ? "ESS" : "MNK"}
+                      REF. T1-ES-{mode === "blindado" ? "BLI" : "ABI"}
                     </div>
                   </div>
-                  <div className="ml-auto font-mono text-[15px]">139 €</div>
+                  <div className="ml-auto font-mono text-[15px]">{selected.price} €</div>
                 </div>
 
                 <div className="mt-5 space-y-2 border-t border-line/[0.07] pt-4 text-[12px]">
@@ -208,7 +221,7 @@ export function Configurator() {
                   </div>
                   <div className="flex items-baseline justify-between pt-2 text-fg">
                     <span className="text-[13px]">Total</span>
-                    <span className="font-mono text-[20px] tracking-tight">139 €</span>
+                    <span className="font-mono text-[20px] tracking-tight">{selected.price} €</span>
                   </div>
                 </div>
 

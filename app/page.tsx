@@ -2,7 +2,7 @@ import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { Gallery } from "@/components/gallery";
 import { Philosophy } from "@/components/philosophy";
-import { Simulator } from "@/components/simulator";
+import { Stats } from "@/components/stats";
 import { Profiles } from "@/components/profiles";
 import { Specs } from "@/components/specs";
 import { Configurator } from "@/components/configurator";
@@ -19,9 +19,11 @@ const jsonLd = {
   brand: { "@type": "Brand", name: "TREGUA" },
   category: "Teléfonos móviles",
   offers: {
-    "@type": "Offer",
-    price: "139.00",
+    "@type": "AggregateOffer",
+    lowPrice: "134.00",
+    highPrice: "139.00",
     priceCurrency: "EUR",
+    offerCount: "2",
     availability: "https://schema.org/InStock",
     itemCondition: "https://schema.org/NewCondition",
     url: "https://tregua.es/#comprar",
@@ -46,9 +48,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Stats />
         <Gallery />
         <Philosophy />
-        <Simulator />
         <Profiles />
         <Specs />
         <Configurator />

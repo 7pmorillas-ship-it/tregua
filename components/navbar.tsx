@@ -10,7 +10,7 @@ const LINKS = [
   { href: "#filosofia", label: "Filosofía" },
   { href: "#para-quien", label: "Para quién es" },
   { href: "#especificaciones", label: "Especificaciones" },
-  { href: "#simulador", label: "Simulador" },
+  { href: "#datos", label: "Los datos" },
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -72,7 +72,7 @@ export function Navbar() {
             href="#comprar"
             className="group inline-flex items-center gap-1.5 rounded-full bg-cta px-3.5 py-2 text-[13px] font-semibold text-[#12110D] transition-all hover:brightness-105 sm:px-4"
           >
-            Comprar<span className="hidden sm:inline">&nbsp;— 139 €</span>
+            Comprar<span className="hidden sm:inline">&nbsp;— desde 134 €</span>
             <ArrowUpRight
               size={14}
               strokeWidth={2.2}
@@ -121,7 +121,7 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className="flex-1 rounded-full bg-cta px-4 py-3 text-center text-sm font-semibold text-[#12110D]"
               >
-                Comprar T1 — 139 €
+                Comprar T1 — desde 134 €
               </a>
             </div>
           </motion.div>

@@ -1,19 +1,20 @@
 import { NextResponse } from "next/server";
 import { MODES } from "@/lib/content";
 
-const PRICE_CENTS = 13900;
+const FALLBACK_MODE = "blindado";
 
 export async function POST(request: Request) {
-  let mode = "essential";
+  let mode: string = FALLBACK_MODE;
 
   try {
     const body = (await request.json()) as { mode?: string };
-    if (body.mode === "monk") mode = "monk";
+    if (MODES.some((m) => m.id === body.mode)) mode = body.mode as string;
   } catch {
     /* cuerpo vacío: modo por defecto */
   }
 
   const modeData = MODES.find((m) => m.id === mode) ?? MODES[0];
+  const priceCents = modeData.price * 100;
   const secret = process.env.STRIPE_SECRET_KEY;
 
   // Sin clave configurada: la UI muestra el aviso de modo demo en lugar de romperse.
@@ -40,7 +41,7 @@ export async function POST(request: Request) {
   body.set("metadata[mode]", mode);
   body.set("line_items[0][quantity]", "1");
   body.set("line_items[0][price_data][currency]", "eur");
-  body.set("line_items[0][price_data][unit_amount]", String(PRICE_CENTS));
+  body.set("line_items[0][price_data][unit_amount]", String(priceCents));
   body.set("line_items[0][price_data][product_data][name]", `TREGUA T1 · ${modeData.name}`);
   body.set(
     "line_items[0][price_data][product_data][description]",

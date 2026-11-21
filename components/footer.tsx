@@ -9,7 +9,7 @@ const COLUMNS = [
       { label: "Galería", href: "#galeria" },
       { label: "Para quién es", href: "#para-quien" },
       { label: "Especificaciones", href: "#especificaciones" },
-      { label: "Simulador", href: "#simulador" },
+      { label: "Los datos", href: "#datos" },
       { label: "Comprar T1", href: "#comprar" },
     ],
   },

@@ -13,7 +13,10 @@ npm run build && npm start   # producción
 ```
 
 Sin `STRIPE_SECRET_KEY` el botón de compra responde en **modo demo** (no rompe la UI). Con clave real
-crea una Checkout Session de Stripe de 139 € y redirige a `/gracias`.
+crea una Checkout Session de Stripe con el precio del modelo elegido (134 € o 139 €) y redirige a `/gracias`.
+
+Precios y márgenes: `docs/PRECIOS.md`. Fotos reales: deja los archivos en `public/render/`
+y escribe la ruta en `lib/photos.ts`; mientras `src` sea `null` se dibuja el render 3D.
 
 ## Estructura
 
@@ -27,15 +30,16 @@ app/
   legal/[slug]/page.tsx privacidad, términos, envíos, devoluciones, cookies, aviso legal
 components/
   navbar.tsx            flotante, menú móvil, toggle claro/oscuro
-  hero.tsx              headline, CTAs, render + etiquetas técnicas flotantes
+  hero.tsx              headline, CTAs, render del dispositivo, precio de lanzamiento
+  stats.tsx             cinta de datos + panel oscuro con cifras de uso y coste real
   philosophy.tsx        bento "entra / se queda fuera"
-  simulator.tsx         teléfono interactivo + registro de sistema
+  photo.tsx             wrapper: usa la foto real si existe en /public/render/
   phone/screen-ui.tsx   pantallas (interfaz clara, app, bloqueo MDM, llamada)
   device.tsx            cuerpo del T1 en 3D CSS (frontal y trasera, teclas interactivas)
-  gallery.tsx           galería: vistas del objeto y detalles
+  gallery.tsx           galería "Míralo de cerca": 5 vistas y 2 macros
   profiles.tsx          tabs 3 perfiles con transición
   specs.tsx             ficha técnica + comparativa de 3 columnas
-  configurator.tsx      modos Esencial / Monje, resumen, Stripe
+  configurator.tsx      T1 Blindado / T1 Abierto, licencia, resumen, Stripe
   faq.tsx               acordeón
   footer.tsx            manifiesto, legales, contacto
   sticky-buy.tsx        barra de compra móvil

@@ -1,41 +1,43 @@
 export const PRICE = 139;
+export const PRICE_OPEN = 134;
+export const LICENSE_YEAR = 10;
+export const PRICE_AFTER_LAUNCH = 159;
 
 export const MODES = [
   {
-    id: "essential",
-    name: "Modo Esencial",
-    tag: "Recomendado",
+    id: "blindado",
+    name: "T1 Blindado",
+    short: "Blindado",
+    tag: "Recomendado · 9 de cada 10",
     price: PRICE,
-    pitch: "Vida moderna, sin el ruido. Para el 90 % de la gente.",
+    license: "12 meses de bloqueo incluidos. Después, 10 €/año solo si quieres mantenerlo: si no pagas, el móvil sigue funcionando igual.",
+    pitch:
+      "El modo restringido viene activado de fábrica y no se puede quitar desde el propio móvil.",
     includes: [
-      "WhatsApp (mensajes, llamadas, vídeo)",
-      "Google Maps con navegación",
-      "Spotify",
-      "App de tu banco + Bizum",
-      "Cámara, linterna, reloj, calculadora",
+      "WhatsApp, Maps, Spotify y banca",
+      "Redes, YouTube, navegador libre y Play Store bloqueados",
+      "Un año de gestión del bloqueo incluido",
+      "Panel para padres y ubicación compartida (opcional)",
+      "Cambio de lista blanca escribiéndonos",
     ],
-    excludes: ["Redes sociales", "YouTube", "Navegador libre", "Play Store"],
+    excludes: ["Redes sociales", "YouTube", "Play Store", "APKs"],
   },
   {
-    id: "monk",
-    name: "Modo Monje / Junior",
-    tag: "Ultra-estricto",
-    price: PRICE,
-    pitch: "Para un primer móvil o para cortar el scroll de raíz.",
+    id: "abierto",
+    name: "T1 Abierto",
+    short: "Abierto",
+    tag: "Solo teclas · 5 € menos",
+    price: PRICE_OPEN,
+    license: "Sin licencia ni cuotas: pagas el móvil una vez y ya está.",
+    pitch:
+      "El mismo móvil sin capa de bloqueo. Tú decides qué instalas, como en cualquier Android.",
     includes: [
-      "Llamadas y SMS",
-      "WhatsApp (mensajes y llamadas)",
-      "Google Maps",
-      "Ubicación compartida con un tutor",
-      "Cámara y linterna",
+      "Android 13 de teclas, sin filtros",
+      "WhatsApp, Maps, Spotify y banca",
+      "Puedes instalar lo que quieras, APK incluido",
+      "Sin cuotas, sin renovaciones",
     ],
-    excludes: [
-      "Spotify",
-      "Banca",
-      "Navegador",
-      "Play Store",
-      "Cualquier instalación",
-    ],
+    excludes: ["Bloqueo de redes", "Panel del tutor", "Filtro de instalación"],
   },
 ] as const;
 
@@ -109,6 +111,50 @@ export const PROFILES = [
   },
 ] as const;
 
+export const STATS = [
+  {
+    value: "4 h 12 min",
+    label: "al día con el móvil",
+    note: "Media de adultos en España: más de 60 días al año mirando una pantalla.",
+  },
+  {
+    value: "≈ 110",
+    label: "desbloqueos al día",
+    note: "Uno cada 9 minutos. Ni siquiera cuando estás cenando.",
+  },
+  {
+    value: "2 h 05 min",
+    label: "solo en redes sociales",
+    note: "Más tiempo del que la mayoría dedica a leer, cocinar o moverse.",
+  },
+  {
+    value: "6 de 10",
+    label: "quieren usar menos el móvil",
+    note: "Casi todos lo intentan con apps que se pueden desactivar. No funciona.",
+  },
+];
+
+export const STATS_FOOTNOTE =
+  "Medias aproximadas publicadas en estudios de consumo digital en España (2024–2025). Son estimaciones de terceros, no mediciones propias de TREGUA.";
+
+export const PRICE_LOGIC = [
+  {
+    title: "Un smartphone",
+    value: "400–900 €",
+    body: "Y encima te cuesta entre 3 y 5 horas de tu día. El móvil más caro que vas a comprar es el tiempo que consume.",
+  },
+  {
+    title: "Un dumbphone de los de antes",
+    value: "30–60 €",
+    body: "Barato, sí. Pero sin WhatsApp no hay vida social ni trabajo, y sin Maps ni Bizum te quedas a medias.",
+  },
+  {
+    title: "TREGUA T1",
+    value: "134–139 €",
+    body: "Lo que de verdad usas, sin lo que te roba el tiempo. Pago único, batería de días y ninguna app que te persiga.",
+  },
+];
+
 export const SPECS = [
   { label: "Pantalla", value: 'IPS 2.8" táctil · 480 × 640', note: "Alto contraste" },
   { label: "Teclado", value: "T9 físico retroiluminado", note: "Pulsación real" },
@@ -117,7 +163,7 @@ export const SPECS = [
   { label: "Batería", value: "1.800 mAh extraíble", note: "Hasta 5 días en uso ligero" },
   { label: "Carga", value: "USB-C", note: "Cable incluido" },
   { label: "Cámara", value: "2 MP trasera", note: "Con flash / linterna" },
-  { label: "Memoria", value: "2 GB RAM · 16 GB + microSD", note: "Hasta 128 GB" },
+  { label: "Memoria", value: "3 GB RAM · 32 GB + microSD", note: "Hasta 128 GB" },
   { label: "Extras", value: "Jack 3,5 mm · Bluetooth 4.2 · GPS", note: "FM y manos libres" },
   { label: "Peso", value: "118 g", note: "Cuerpo negro mate" },
 ];
@@ -144,7 +190,7 @@ export const FAQS = [
   },
   {
     q: "¿Puedo pagar con Bizum y ver mi banco?",
-    a: "Sí. En el Modo Esencial están permitidas las apps de banca españolas más habituales (CaixaBank, BBVA, Santander, Sabadell, Bankinter, Revolut, N26…) y Bizum funciona dentro de ellas. Nos escribes antes de enviar el pedido y añadimos tu app a la lista blanca sin coste.",
+    a: "Sí. En el T1 Blindado están permitidas las apps de banca españolas más habituales (CaixaBank, BBVA, Santander, Sabadell, Bankinter, Revolut, N26…) y Bizum funciona dentro de ellas. Nos escribes antes de enviar el pedido y añadimos tu app a la lista blanca sin coste.",
   },
   {
     q: "¿Se puede desactivar el bloqueo fácilmente?",
