@@ -3,7 +3,7 @@ import { PHOTOS, type Photo } from "@/lib/photos";
 import { cn } from "@/lib/utils";
 
 /**
- * Muestra la foto real si existe en /public/render/; si no, dibuja el render CSS.
+ * Muestra la foto real si existe en /public/render/; si no, usa el contenido alternativo indicado.
  */
 export function RealPhoto({
   name,

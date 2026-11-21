@@ -9,12 +9,12 @@ import { cn } from "@/lib/utils";
 const SLOTS = [
   {
     name: "hand",
-    caption: "En la mano, en la calle. 118 gramos.",
+    caption: "La vida real sigue cuando el móvil deja de pedirte atención.",
     span: "md:col-span-5",
   },
   {
     name: "street",
-    caption: "Sin notificaciones: si miras el móvil, es porque quieres.",
+    caption: "Un teléfono puede acompañarte sin ocupar toda la escena.",
     span: "md:col-span-4",
   },
   {

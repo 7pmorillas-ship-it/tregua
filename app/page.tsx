@@ -12,6 +12,7 @@ import { Faq } from "@/components/faq";
 import { Footer } from "@/components/footer";
 import { StickyBuy } from "@/components/sticky-buy";
 import { ContactCta } from "@/components/contact-cta";
+import { VideoPlaceholder } from "@/components/video-placeholder";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -53,6 +54,7 @@ export default function Home() {
         <Hero />
         <Life />
         <Gallery />
+        <VideoPlaceholder />
         <Philosophy />
         <div className="shell pb-4">
           <AppChecker />

@@ -1,7 +1,6 @@
 import { ArrowDownRight, MessageCircle, Truck } from "lucide-react";
-import { Device } from "@/components/device";
 import { RealPhoto } from "@/components/photo";
-import { HomeScreen } from "@/components/phone/screen-ui";
+import { ProductPhotoSlot } from "@/components/product-photo-slot";
 
 const STATS = [
   { value: "−3 h 12 min", label: "de pantalla al día" },
@@ -76,15 +75,7 @@ export function Hero() {
             <div className="relative mx-auto w-[252px] animate-fade-up sm:w-[288px]">
               <RealPhoto
                 name="hero"
-                fallback={
-                  <Device
-                    tilt
-                    size="md"
-                    screen={<HomeScreen time="07:42" selected={0} dial="" />}
-                    ariaLabel="Teléfono TREGUA T1 en negro mate"
-                    className="animate-fade-up"
-                  />
-                }
+                fallback={<ProductPhotoSlot label="Foto real del TREGUA T1" filename="hero.jpg" className="min-h-[420px]" />}
               />
             </div>
           </div>
