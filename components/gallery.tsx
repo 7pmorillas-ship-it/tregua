@@ -113,7 +113,7 @@ export function Gallery() {
               fallback={
                 <Device
                   tilt
-                  className="w-[190px] sm:w-[230px] lg:w-[270px]"
+                  className="w-[200px] sm:w-[250px] lg:w-[300px]"
                   screen={<HomeScreen time="07:42" selected={0} />}
                 />
               }

@@ -45,8 +45,9 @@ Con Stripe europeo el margen sube ~2 € por unidad.
   el cliente se va a un Nokia de 40 € que no le sirve.
 - Un smartphone "de verdad" cuesta 400–900 €: por debajo de 150 € el T1 se lee como
   capricho barato, no como compra seria.
-- Balance Phone y marcas similares juegan en 150–250 € con hardware parecido al nuestro:
-  nuestro argumento no es el precio, es que aquí el bloqueo no se puede desactivar.
+- Otras marcas de teléfonos "conscientes" (Balance Phone, Unpluq, Light Phone) se mueven
+  en una franja parecida o superior con hardware equivalente: nuestro argumento no es el
+  precio, es que aquí el bloqueo no se puede desactivar desde el móvil.
 
 ## Reglas comerciales
 
