@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 244 242 236;
+  --card: 253 252 248;
+  --fg: 24 23 19;
+  --muted: 112 107 96;
+  --line: 24 23 19;
+  --accent: 197 64 14;
+  --cta: 255 77 0;
+  --signal: 0 140 98;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: 13 13 14;
+  --card: 21 21 23;
+  --fg: 246 244 238;
+  --muted: 152 149 141;
+  --line: 255 255 255;
+  --accent: 255 110 51;
+  --cta: 255 77 0;
+  --signal: 0 229 153;
+  color-scheme: dark;
+}
+
+* {
+  border-color: rgb(var(--line) / 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--fg));
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #ff4d00;
+  color: #0a0a0b;
+}
+
+/* Scrollbar discreto, estilo consola */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(var(--bg));
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--line) / 0.14);
+  border-radius: 999px;
+  border: 2px solid rgb(var(--bg));
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-shell px-5 sm:px-8;
+  }
+
+  .mono-label {
+    @apply font-mono text-[10px] uppercase tracking-[0.18em] text-muted sm:text-[11px];
+  }
+
+  .card-surface {
+    @apply rounded-2xl border border-line/[0.08] bg-card;
+    background-image: linear-gradient(
+      180deg,
+      rgb(var(--line) / 0.035),
+      transparent 40%
+    );
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-cta px-5 py-3 text-sm font-semibold text-[#12110D] transition-all duration-300 hover:brightness-105 active:scale-[0.98];
+    box-shadow: 0 10px 30px -18px rgba(255, 77, 0, 0.9);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 14px 40px -18px rgba(255, 77, 0, 0.75);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-line/15 px-5 py-3 text-sm font-medium text-fg transition-colors duration-300 hover:border-line/30 hover:bg-line/[0.04];
+  }
+
+  .hairline {
+    @apply border-t border-line/[0.08];
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Rejilla técnica de fondo, muy sutil */
+  .grid-lines {
+    background-image: linear-gradient(
+        to right,
+        rgb(var(--line) / 0.035) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgb(var(--line) / 0.035) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 75%);
+  }
+
+  .noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Pantalla del dispositivo: ligera curvatura de cristal */
+  .screen-glass {
+    background-image: radial-gradient(
+        120% 90% at 20% 0%,
+        rgba(255, 255, 255, 0.07),
+        transparent 55%
+      ),
+      radial-gradient(90% 60% at 100% 100%, rgba(255, 255, 255, 0.03), transparent);
+  }
+
+  .key-cap {
+    @apply flex select-none items-center justify-center rounded-md border border-white/[0.07] bg-gradient-to-b from-white/[0.075] to-white/[0.015] font-mono text-[11px] text-white/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_2px_4px_rgba(0,0,0,0.5)] transition-all duration-150;
+  }
+  .key-cap:hover {
+    @apply border-white/20 bg-white/[0.1] text-white;
+  }
+  .key-cap:active {
+    transform: translateY(1px) scale(0.985);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.6);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+}
