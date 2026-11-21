@@ -13,7 +13,7 @@ import {
   X,
 } from "lucide-react";
 import { Reveal, SectionHeading } from "@/components/reveal";
-import { INCLUDED_IN_BOX, MODES, PRICE_AFTER_LAUNCH, type ModeId } from "@/lib/content";
+import { INCLUDED_IN_BOX, MODES, type ModeId } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
 type Status = "idle" | "loading" | "demo" | "error";
@@ -79,13 +79,13 @@ export function Configurator() {
         </Reveal>
 
         <Reveal delay={0.04}>
-          <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl border border-cta/25 bg-cta/[0.05] px-4 py-3">
-            <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-cta">
-              Precio de lanzamiento
+          <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl border border-line/[0.1] bg-line/[0.03] px-4 py-3">
+            <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-fg/60">
+              Pago único
             </span>
             <span className="text-[12.5px] leading-snug text-fg/75">
-              Cuando se acabe el primer lote, el T1 pasa a {PRICE_AFTER_LAUNCH} €.
-              El envío y la garantía no cambian.
+              Sin suscripción, sin cuotas y sin renovaciones. Pagas el móvil una
+              vez; el envío y la garantía van incluidos.
             </span>
           </div>
         </Reveal>

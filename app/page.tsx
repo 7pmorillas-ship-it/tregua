@@ -2,7 +2,9 @@ import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { Gallery } from "@/components/gallery";
 import { Philosophy } from "@/components/philosophy";
+import { AppChecker } from "@/components/app-checker";
 import { Stats } from "@/components/stats";
+import { People } from "@/components/people";
 import { Profiles } from "@/components/profiles";
 import { Specs } from "@/components/specs";
 import { Configurator } from "@/components/configurator";
@@ -21,7 +23,7 @@ const jsonLd = {
   offers: {
     "@type": "AggregateOffer",
     lowPrice: "134.00",
-    highPrice: "139.00",
+    highPrice: "144.00",
     priceCurrency: "EUR",
     offerCount: "2",
     availability: "https://schema.org/InStock",
@@ -51,6 +53,10 @@ export default function Home() {
         <Stats />
         <Gallery />
         <Philosophy />
+        <div className="shell pb-4">
+          <AppChecker />
+        </div>
+        <People />
         <Profiles />
         <Specs />
         <Configurator />

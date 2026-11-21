@@ -61,7 +61,7 @@ export function Hero() {
               className="mt-4 animate-fade-up font-mono text-[10px] uppercase tracking-[0.14em] text-accent"
               style={{ animationDelay: "180ms" }}
             >
-              Precio de lanzamiento · después del primer lote, 159 €
+              Pago único · 134 € sin bloqueo, 144 € blindado
             </p>
 
             <p

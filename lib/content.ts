@@ -1,7 +1,5 @@
-export const PRICE = 139;
+export const PRICE = 144;
 export const PRICE_OPEN = 134;
-export const LICENSE_YEAR = 10;
-export const PRICE_AFTER_LAUNCH = 159;
 
 export const MODES = [
   {
@@ -10,14 +8,14 @@ export const MODES = [
     short: "Blindado",
     tag: "Recomendado · 9 de cada 10",
     price: PRICE,
-    license: "12 meses de bloqueo incluidos. Después, 10 €/año solo si quieres mantenerlo: si no pagas, el móvil sigue funcionando igual.",
+    license:
+      "Pago único. El bloqueo es de fábrica y no caduca: no hay cuotas ni renovaciones.",
     pitch:
       "El modo restringido viene activado de fábrica y no se puede quitar desde el propio móvil.",
     includes: [
       "WhatsApp, Maps, Spotify y banca",
       "Redes, YouTube, navegador libre y Play Store bloqueados",
-      "Un año de gestión del bloqueo incluido",
-      "Panel para padres y ubicación compartida (opcional)",
+      "Bloqueo permanente, sin suscripción",
       "Cambio de lista blanca escribiéndonos",
     ],
     excludes: ["Redes sociales", "YouTube", "Play Store", "APKs"],
@@ -26,9 +24,10 @@ export const MODES = [
     id: "abierto",
     name: "T1 Abierto",
     short: "Abierto",
-    tag: "Solo teclas · 5 € menos",
+    tag: "Solo teclas · 10 € menos",
     price: PRICE_OPEN,
-    license: "Sin licencia ni cuotas: pagas el móvil una vez y ya está.",
+    license:
+      "Pago único, igual que el Blindado. Aquí el filtro lo pones tú.",
     pitch:
       "El mismo móvil sin capa de bloqueo. Tú decides qué instalas, como en cualquier Android.",
     includes: [
@@ -37,7 +36,7 @@ export const MODES = [
       "Puedes instalar lo que quieras, APK incluido",
       "Sin cuotas, sin renovaciones",
     ],
-    excludes: ["Bloqueo de redes", "Panel del tutor", "Filtro de instalación"],
+    excludes: ["Bloqueo de redes", "Filtro de instalación"],
   },
 ] as const;
 
@@ -115,45 +114,22 @@ export const STATS = [
   {
     value: "4 h 12 min",
     label: "al día con el móvil",
-    note: "Media de adultos en España: más de 60 días al año mirando una pantalla.",
+    note: "Media de adultos en España.",
   },
   {
     value: "≈ 110",
-    label: "desbloqueos al día",
-    note: "Uno cada 9 minutos. Ni siquiera cuando estás cenando.",
+    label: "veces que lo desbloqueas",
+    note: "Uno cada 9 minutos.",
   },
   {
-    value: "2 h 05 min",
-    label: "solo en redes sociales",
-    note: "Más tiempo del que la mayoría dedica a leer, cocinar o moverse.",
-  },
-  {
-    value: "6 de 10",
-    label: "quieren usar menos el móvil",
-    note: "Casi todos lo intentan con apps que se pueden desactivar. No funciona.",
+    value: "61 días",
+    label: "al año mirando una pantalla",
+    note: "Dos meses de tu vida, cada año.",
   },
 ];
 
 export const STATS_FOOTNOTE =
-  "Medias aproximadas publicadas en estudios de consumo digital en España (2024–2025). Son estimaciones de terceros, no mediciones propias de TREGUA.";
-
-export const PRICE_LOGIC = [
-  {
-    title: "Un smartphone",
-    value: "400–900 €",
-    body: "Y encima te cuesta entre 3 y 5 horas de tu día. El móvil más caro que vas a comprar es el tiempo que consume.",
-  },
-  {
-    title: "Un dumbphone de los de antes",
-    value: "30–60 €",
-    body: "Barato, sí. Pero sin WhatsApp no hay vida social ni trabajo, y sin Maps ni Bizum te quedas a medias.",
-  },
-  {
-    title: "TREGUA T1",
-    value: "134–139 €",
-    body: "Lo que de verdad usas, sin lo que te roba el tiempo. Pago único, batería de días y ninguna app que te persiga.",
-  },
-];
+  "Medias publicadas en estudios de consumo digital en España (2024–2025). Son estimaciones de terceros, no mediciones propias.";
 
 export const SPECS = [
   { label: "Pantalla", value: 'IPS 2.8" táctil · 480 × 640', note: "Alto contraste" },

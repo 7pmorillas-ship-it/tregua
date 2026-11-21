@@ -37,4 +37,12 @@ export const PHOTOS: Record<string, Photo> = {
     src: null,
     alt: "TREGUA T1 sostenido con una mano",
   },
+  street: {
+    src: null,
+    alt: "Persona usando TREGUA T1 en la calle",
+  },
+  cafe: {
+    src: null,
+    alt: "TREGUA T1 sobre la mesa de una cafetería, junto a un café",
+  },
 };

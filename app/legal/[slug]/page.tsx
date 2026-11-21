@@ -43,7 +43,7 @@ const PAGES: Record<string, LegalPage> = {
     blocks: [
       {
         h: "Precio y pago",
-        p: "T1 Blindado: 139 €. T1 Abierto: 134 €. Envío gratuito en península. El cobro se realiza al confirmar el pedido mediante Stripe. El modo restringido del T1 Blindado incluye 12 meses; su renovación es opcional y cuesta 10 €/año.",
+        p: "T1 Blindado: 144 €. T1 Abierto: 134 €. Pago único, sin suscripciones ni renovaciones. Envío gratuito en península. El cobro se realiza al confirmar el pedido mediante Stripe.",
       },
       {
         h: "Envío",

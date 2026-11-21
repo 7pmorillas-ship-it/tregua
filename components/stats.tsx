@@ -1,4 +1,4 @@
-import { PRICE_LOGIC, STATS, STATS_FOOTNOTE } from "@/lib/content";
+import { STATS, STATS_FOOTNOTE } from "@/lib/content";
 import { Reveal } from "@/components/reveal";
 
 const TICKER = [
@@ -44,7 +44,7 @@ export function Stats() {
               </p>
             </div>
 
-            <dl className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
+            <dl className="mt-12 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-3">
               {STATS.map((stat) => (
                 <div key={stat.label} className="border-t border-bg/15 pt-4">
                   <dd className="font-mono text-[clamp(24px,3.6vw,38px)] font-medium leading-none tracking-[-0.03em]">
@@ -65,28 +65,6 @@ export function Stats() {
         <p className="mt-4 max-w-[70ch] text-[11.5px] leading-relaxed text-muted/80">
           {STATS_FOOTNOTE}
         </p>
-
-        <div className="mt-14 grid gap-4 md:grid-cols-3">
-          {PRICE_LOGIC.map((item, i) => (
-            <Reveal key={item.title} delay={i * 0.05}>
-              <div
-                className={
-                  i === 2
-                    ? "h-full rounded-2xl border border-cta/25 bg-cta/[0.06] p-6"
-                    : "h-full rounded-2xl border border-line/[0.08] bg-card p-6"
-                }
-              >
-                <p className="mono-label text-fg/45">{item.title}</p>
-                <p className="mt-4 font-mono text-[22px] font-medium tracking-tight text-fg">
-                  {item.value}
-                </p>
-                <p className="mt-3 text-[13px] leading-relaxed text-muted">
-                  {item.body}
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
       </div>
     </section>
   );
