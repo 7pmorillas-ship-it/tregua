@@ -89,13 +89,13 @@ export function Philosophy() {
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <div className="flex items-center gap-2 font-mono text-[10px] tracking-[0.16em] text-signal">
-                    <span className="h-1.5 w-1.5 rounded-full bg-signal shadow-[0_0_10px_rgba(0,229,153,0.7)]" />
-                    [ HABILITADO ]
+                    <span className="h-1.5 w-1.5 rounded-full bg-signal" />
+                    Permitido
                   </div>
                   <h3 className="mt-2 text-xl font-medium tracking-tight">Herramientas esenciales</h3>
                 </div>
-                <span className="hidden rounded border border-line/10 px-2 py-1 font-mono text-[9px] tracking-[0.1em] text-muted sm:block">
-                  8 APPS · NIVEL SISTEMA
+                <span className="hidden font-mono text-[9px] tracking-[0.1em] text-muted sm:block">
+                  8 apps
                 </span>
               </div>
 
@@ -129,10 +129,10 @@ export function Philosophy() {
 
           {/* Bloqueado */}
           <Reveal delay={0.12}>
-            <div className="relative h-full overflow-hidden rounded-2xl border border-accent/20 bg-[linear-gradient(180deg,rgba(255,77,0,0.09),rgba(18,18,21,0)_55%)] p-5 sm:p-7">
+            <div className="relative h-full overflow-hidden rounded-2xl border border-line/[0.09] bg-line/[0.015] p-5 sm:p-7">
               <div className="flex items-center gap-2 font-mono text-[10px] tracking-[0.16em] text-accent">
                 <Lock size={11} />
-                [ BLOQUEADO · MDM ]
+                Bloqueado de fábrica
               </div>
               <h3 className="mt-2 text-xl font-medium tracking-tight">Fuera del sistema</h3>
 
@@ -161,10 +161,8 @@ export function Philosophy() {
                 })}
               </ul>
 
-              <div className="mt-5 rounded-lg border border-line/[0.07] bg-line/[0.025] px-3 py-2 font-mono text-[8px] leading-relaxed tracking-[0.1em] text-muted/60">
-                POLICY · TREGUA-OWNER-v3
-                <br />
-                NO ELIMINABLE DESDE AJUSTES
+              <div className="mt-5 border-t border-line/[0.08] pt-3 font-mono text-[8px] leading-relaxed tracking-[0.1em] text-muted/60">
+                No se desactiva desde los ajustes del móvil.
               </div>
             </div>
           </Reveal>

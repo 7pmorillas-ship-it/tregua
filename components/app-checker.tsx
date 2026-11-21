@@ -38,7 +38,7 @@ export function AppChecker() {
     <div className="rounded-2xl border border-line/[0.09] bg-card p-5 sm:p-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="mono-label text-fg/45">[ COMPRUEBA LA TUYA ]</p>
+          <p className="mono-label text-fg/45">Lista de apps</p>
           <h3 className="mt-2.5 text-[19px] font-medium tracking-[-0.01em] text-fg">
             ¿Tu app está permitida?
           </h3>
@@ -84,7 +84,7 @@ export function AppChecker() {
 
       <div aria-live="polite" className="mt-4">
         {searching && results.length === 0 && (
-          <div className="flex flex-col gap-2 rounded-xl border border-dashed border-line/[0.15] px-4 py-4 text-[13px] text-muted sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-2 border-t border-line/[0.1] pt-4 text-[13px] text-muted sm:flex-row sm:items-center sm:justify-between">
             <span>No la tenemos listada todavía.</span>
             <a
               href="https://wa.me/34600123456?text=Hola%2C%20%C2%BFest%C3%A1%20permitida%20mi%20app%3F"

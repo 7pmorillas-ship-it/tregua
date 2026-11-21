@@ -3,7 +3,7 @@ import { Hero } from "@/components/hero";
 import { Gallery } from "@/components/gallery";
 import { Philosophy } from "@/components/philosophy";
 import { AppChecker } from "@/components/app-checker";
-import { Stats } from "@/components/stats";
+import { Life } from "@/components/life";
 import { People } from "@/components/people";
 import { Profiles } from "@/components/profiles";
 import { Specs } from "@/components/specs";
@@ -51,7 +51,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Stats />
+        <Life />
         <Gallery />
         <Philosophy />
         <div className="shell pb-4">

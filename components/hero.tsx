@@ -12,12 +12,6 @@ const STATS = [
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pb-16 pt-28 sm:pt-32 lg:pb-20 lg:pt-32">
-      <div aria-hidden className="grid-lines absolute inset-0 -z-10" />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-40 right-[-8%] -z-10 h-[560px] w-[560px] rounded-full bg-[radial-gradient(circle,rgba(255,150,100,0.18),transparent_62%)] blur-3xl"
-      />
-
       <div className="shell">
         <div className="flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] text-muted">
           <span className="h-1 w-1 rounded-full bg-accent" />
@@ -80,13 +74,6 @@ export function Hero() {
           {/* Dispositivo */}
           <div className="relative mx-auto w-full max-w-[400px] lg:justify-self-end">
             <div className="relative mx-auto w-[252px] animate-fade-up sm:w-[288px]">
-              <span className="absolute -left-3 top-14 z-20 hidden -translate-x-full whitespace-nowrap rounded-full border border-line/15 bg-card/85 px-2.5 py-1 font-mono text-[9px] tracking-[0.1em] text-muted backdrop-blur xl:inline-flex">
-                [ SYSTEM: LOCKED ]
-              </span>
-              <span className="absolute -right-3 bottom-28 z-20 hidden translate-x-full whitespace-nowrap rounded-full border border-accent/30 bg-card/85 px-2.5 py-1 font-mono text-[9px] tracking-[0.1em] text-accent backdrop-blur xl:inline-flex">
-                [ WHATSAPP READY ]
-              </span>
-
               <RealPhoto
                 name="hero"
                 fallback={
@@ -102,20 +89,6 @@ export function Hero() {
             </div>
           </div>
         </div>
-
-        {/* Datos rápidos */}
-        <dl className="mt-14 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-line/[0.08] bg-line/[0.07]">
-          {STATS.map((stat) => (
-            <div key={stat.label} className="bg-bg px-4 py-4 sm:px-5">
-              <dt className="font-mono text-[9px] uppercase tracking-[0.1em] text-muted">
-                {stat.label}
-              </dt>
-              <dd className="mt-1 font-mono text-lg tracking-tight text-fg sm:text-xl">
-                {stat.value}
-              </dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   );

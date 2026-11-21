@@ -110,7 +110,7 @@ export function Footer() {
             © 2026 TREGUA · HECHO EN ESPAÑA · PRECIOS CON IVA
           </p>
           <p className="font-mono text-[9px] tracking-[0.1em] text-muted/40">
-            [ BUILD 2026.11 · SYSTEM LOCKED ]
+            TREGUA T1 · Fabricado en España · 2026
           </p>
         </div>
       </div>

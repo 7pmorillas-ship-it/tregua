@@ -33,7 +33,7 @@ export function People() {
       <Reveal>
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="mono-label text-fg/50">[ UNA VIDA MÁS PRESENTE ]</p>
+            <p className="mono-label text-fg/50">En la calle</p>
             <h2 className="mt-4 max-w-[18ch] text-[clamp(28px,4.4vw,46px)] font-medium leading-[0.99] tracking-[-0.03em] text-fg">
               El teléfono vuelve a su sitio
             </h2>

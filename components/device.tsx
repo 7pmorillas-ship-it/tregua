@@ -247,16 +247,12 @@ export function Device({
 
   return (
     <div className={cn("relative select-none", className)} aria-label={ariaLabel}>
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -inset-12 -z-10 rounded-[70px] bg-[radial-gradient(ellipse_at_50%_38%,rgba(255,120,60,0.22),transparent_68%)] blur-2xl"
-      />
       <div style={{ perspective: tilt ? "1600px" : undefined }} className="relative">
         {shell}
       </div>
       <div
         aria-hidden
-        className="mx-auto mt-5 h-4 w-2/3 rounded-[100%] bg-[radial-gradient(ellipse,rgba(40,32,24,0.22),transparent_70%)] blur-md"
+        className="mx-auto mt-4 h-3 w-1/2 rounded-[100%] bg-[radial-gradient(ellipse,rgba(40,32,24,0.18),transparent_72%)] blur-md"
       />
     </div>
   );
