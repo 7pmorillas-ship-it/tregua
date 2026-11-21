@@ -137,7 +137,7 @@ export function Profiles() {
                           src={PROFILE_IMAGES[profile.id].src}
                           alt={PROFILE_IMAGES[profile.id].alt}
                           loading="lazy"
-                          className="aspect-[16/10] w-full object-cover"
+                          className="h-36 w-full object-cover sm:h-44"
                         />
                         <figcaption className="px-4 py-2.5 text-[11px] text-muted">
                           Un primer móvil para estar conectado sin estar enganchado.

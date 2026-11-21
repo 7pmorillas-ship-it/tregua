@@ -44,7 +44,7 @@ export function Life() {
             <img
               src={publicPath("/photos/abuela-ventana.jpg")}
               alt="Una mujer mayor mira la pantalla de su teléfono junto a una ventana"
-              className="aspect-[4/5] w-full object-cover"
+            className="aspect-[4/3] w-full max-w-sm object-cover"
               loading="lazy"
             />
             <figcaption className="mt-2.5 text-[11px] text-muted">
@@ -54,13 +54,14 @@ export function Life() {
         </Reveal>
       </div>
 
+      <div className="mt-10 grid gap-4 sm:grid-cols-2">
       <Reveal delay={0.08}>
-        <figure className="mt-14">
+        <figure>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={publicPath("/photos/autobus.jpg")}
             alt="Una mujer mira su teléfono sentada en el autobús"
-            className="aspect-[21/9] w-full object-cover object-center"
+            className="h-40 w-full object-cover object-center sm:h-48"
             loading="lazy"
           />
           <figcaption className="mt-2.5 text-[11px] text-muted">
@@ -70,12 +71,12 @@ export function Life() {
       </Reveal>
 
       <Reveal delay={0.09}>
-        <figure className="mt-5">
+        <figure>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="https://images.pexels.com/photos/5212658/pexels-photo-5212658.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt="Tres adolescentes compartiendo un teléfono al aire libre"
-            className="aspect-[21/9] w-full object-cover object-center"
+            className="h-40 w-full object-cover object-center sm:h-48"
             loading="lazy"
           />
           <figcaption className="mt-2.5 text-[11px] text-muted">
@@ -83,6 +84,7 @@ export function Life() {
           </figcaption>
         </figure>
       </Reveal>
+      </div>
 
       <Reveal delay={0.1}>
         <p className="mt-12 max-w-[46ch] text-[15px] leading-relaxed text-fg/75">
