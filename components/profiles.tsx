@@ -16,8 +16,8 @@ const ICONS: Record<string, LucideIcon> = {
 
 const PROFILE_IMAGES: Record<string, { src: string; alt: string }> = {
   familias: {
-    src: "https://images.pexels.com/photos/5865829/pexels-photo-5865829.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    alt: "Adolescente al aire libre con un teléfono en la mano",
+    src: "https://images.pexels.com/photos/5212658/pexels-photo-5212658.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    alt: "Tres adolescentes compartiendo un teléfono al aire libre",
   },
   mayores: {
     src: publicPath("/photos/abuela-ventana.jpg"),

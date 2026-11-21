@@ -73,8 +73,8 @@ export function Life() {
         <figure className="mt-5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://images.pexels.com/photos/5865829/pexels-photo-5865829.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt="Adolescente al aire libre con un teléfono en la mano"
+            src="https://images.pexels.com/photos/5212658/pexels-photo-5212658.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            alt="Tres adolescentes compartiendo un teléfono al aire libre"
             className="aspect-[21/9] w-full object-cover object-center"
             loading="lazy"
           />
