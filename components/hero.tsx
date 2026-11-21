@@ -1,4 +1,4 @@
-import { ArrowDownRight, Truck } from "lucide-react";
+import { ArrowDownRight, MessageCircle, Truck } from "lucide-react";
 import { Device } from "@/components/device";
 import { RealPhoto } from "@/components/photo";
 import { HomeScreen } from "@/components/phone/screen-ui";
@@ -25,9 +25,9 @@ export function Hero() {
         </div>
 
         <h1 className="mt-6 animate-fade-up text-balance text-[40px] font-semibold leading-[0.98] tracking-tightest sm:text-[54px] lg:text-[70px] xl:text-[80px]">
-          Todo lo que necesitas.
+          Recupera tu
           <br />
-          Nada que te robe <span className="text-accent">el tiempo.</span>
+          tiempo<span className="text-accent">.</span>
         </h1>
 
         <div className="mt-10 grid gap-12 lg:mt-14 lg:grid-cols-[1fr_0.92fr] lg:items-center lg:gap-8">
@@ -36,9 +36,9 @@ export function Hero() {
               className="max-w-md animate-fade-up text-pretty text-[15px] leading-relaxed text-muted sm:text-base"
               style={{ animationDelay: "90ms" }}
             >
-              Un teléfono de teclas con Android 13 blindado de fábrica. WhatsApp, Maps, Spotify y tu
-              banco funcionan; las redes sociales y el navegador libre no existen.{" "}
-              <span className="text-fg">No es una app: es otro móvil.</span>
+              Hay una vida entera fuera del scroll. TREGUA te deja estar localizable, escuchar música,
+              llegar a cualquier sitio y pagar lo que necesites, sin llevarte internet entero en el bolsillo.{" "}
+              <span className="text-fg">Un móvil que te devuelve la atención.</span>
             </p>
 
             <div
@@ -56,6 +56,10 @@ export function Hero() {
                 Ver cómo es
               </a>
             </div>
+
+            <a href="https://wa.me/34600123456?text=Hola%20TREGUA%2C%20quiero%20saber%20si%20pod%C3%A9is%20a%C3%B1adir%20una%20app" target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 text-[12px] text-muted transition-colors hover:text-accent">
+              <MessageCircle size={14} /> ¿Necesitas otra app? Escríbenos y lo vemos juntos ↗
+            </a>
 
             <p
               className="mt-4 animate-fade-up font-mono text-[10px] uppercase tracking-[0.14em] text-accent"

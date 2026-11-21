@@ -34,15 +34,15 @@ export const PHOTOS: Record<string, Photo> = {
     alt: "Detalle de la pantalla de 2,8 pulgadas de TREGUA T1",
   },
   hand: {
-    src: null,
+    src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85",
     alt: "TREGUA T1 sostenido con una mano",
   },
   street: {
-    src: null,
+    src: "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=1200&q=85",
     alt: "Persona usando TREGUA T1 en la calle",
   },
   cafe: {
-    src: null,
+    src: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=85",
     alt: "TREGUA T1 sobre la mesa de una cafetería, junto a un café",
   },
 };

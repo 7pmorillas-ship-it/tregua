@@ -11,6 +11,7 @@ import { Configurator } from "@/components/configurator";
 import { Faq } from "@/components/faq";
 import { Footer } from "@/components/footer";
 import { StickyBuy } from "@/components/sticky-buy";
+import { ContactCta } from "@/components/contact-cta";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -57,6 +58,7 @@ export default function Home() {
           <AppChecker />
         </div>
         <People />
+        <ContactCta />
         <Profiles />
         <Specs />
         <Configurator />

@@ -4,8 +4,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * Banda de fotos de gente real usando el T1.
- * Solo se muestra cuando hay al menos una foto en /public/render/ (ver lib/photos.ts),
- * para no dejar huecos vacíos en la web publicada.
+ * Las fotos pueden ser imágenes editoriales remotas o archivos propios en /public/render/.
  */
 const SLOTS = [
   {
@@ -34,13 +33,13 @@ export function People() {
       <Reveal>
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="mono-label text-fg/50">[ GENTE DE VERDAD ]</p>
+            <p className="mono-label text-fg/50">[ UNA VIDA MÁS PRESENTE ]</p>
             <h2 className="mt-4 max-w-[18ch] text-[clamp(28px,4.4vw,46px)] font-medium leading-[0.99] tracking-[-0.03em] text-fg">
-              Así se usa, sin tutorial
+              El teléfono vuelve a su sitio
             </h2>
           </div>
           <p className="max-w-[32ch] text-[14px] leading-relaxed text-muted">
-            Nada de glamour: el móvil en el bolsillo, en la mano y en la mesa.
+            En la mano cuando hace falta. En la mesa cuando estás con los tuyos. Y fuera de tu cabeza el resto del tiempo.
           </p>
         </div>
       </Reveal>
