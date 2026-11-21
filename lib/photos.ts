@@ -12,6 +12,8 @@ export type Photo = {
   alt: string;
 };
 
+export const publicPath = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+
 export const PHOTOS: Record<string, Photo> = {
   hero: {
     src: null,
@@ -34,11 +36,11 @@ export const PHOTOS: Record<string, Photo> = {
     alt: "Detalle de la pantalla de 2,8 pulgadas de TREGUA T1",
   },
   hand: {
-    src: "/photos/abuela-ventana.jpg",
+    src: publicPath("/photos/abuela-ventana.jpg"),
     alt: "Mujer mayor junto a una ventana con un teléfono en la mano",
   },
   street: {
-    src: "/photos/autobus.jpg",
+    src: publicPath("/photos/autobus.jpg"),
     alt: "Mujer sentada en un autobús mirando su teléfono",
   },
   cafe: {

@@ -37,6 +37,7 @@ jobs:
         env:
           NEXT_STATIC_EXPORT: "1"
           NEXT_BASE_PATH: /tregua
+          NEXT_PUBLIC_BASE_PATH: /tregua
 
       - run: touch out/.nojekyll
 

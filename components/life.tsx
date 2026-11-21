@@ -1,4 +1,5 @@
 import { STATS, STATS_FOOTNOTE } from "@/lib/content";
+import { publicPath } from "@/lib/photos";
 import { Reveal } from "@/components/reveal";
 
 export function Life() {
@@ -41,7 +42,7 @@ export function Life() {
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/photos/abuela-ventana.jpg"
+              src={publicPath("/photos/abuela-ventana.jpg")}
               alt="Una mujer mayor mira la pantalla de su teléfono junto a una ventana"
               className="aspect-[4/5] w-full object-cover"
               loading="lazy"
@@ -57,7 +58,7 @@ export function Life() {
         <figure className="mt-14">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/photos/autobus.jpg"
+            src={publicPath("/photos/autobus.jpg")}
             alt="Una mujer mira su teléfono sentada en el autobús"
             className="aspect-[21/9] w-full object-cover object-center"
             loading="lazy"
