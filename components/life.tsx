@@ -69,6 +69,21 @@ export function Life() {
         </figure>
       </Reveal>
 
+      <Reveal delay={0.09}>
+        <figure className="mt-5">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1600&q=85"
+            alt="Adolescente al aire libre con un teléfono en la mano"
+            className="aspect-[21/9] w-full object-cover object-center"
+            loading="lazy"
+          />
+          <figcaption className="mt-2.5 text-[11px] text-muted">
+            El primer móvil debería conectar, no distraer.
+          </figcaption>
+        </figure>
+      </Reveal>
+
       <Reveal delay={0.1}>
         <p className="mt-12 max-w-[46ch] text-[15px] leading-relaxed text-fg/75">
           No hace falta fuerza de voluntad. Hace falta que el móvil no esté
