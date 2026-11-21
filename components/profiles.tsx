@@ -13,6 +13,13 @@ const ICONS: Record<string, LucideIcon> = {
   "battery-charging": BatteryCharging,
 };
 
+const PROFILE_IMAGES: Record<string, { src: string; alt: string }> = {
+  familias: {
+    src: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=85",
+    alt: "Adolescente al aire libre con un teléfono en la mano",
+  },
+};
+
 export function Profiles() {
   const [active, setActive] = useState(0);
   const profile = PROFILES[active];
@@ -113,8 +120,23 @@ export function Profiles() {
                     </div>
                   </div>
 
-                  <div className="rounded-xl border border-line/[0.07] bg-line/[0.025] p-4 sm:p-5">
-                    <div className="mono-label mb-3">EN LA PRÁCTICA</div>
+                  <div className="space-y-4">
+                    {PROFILE_IMAGES[profile.id] ? (
+                      <figure className="overflow-hidden rounded-xl border border-line/[0.07] bg-line/[0.025]">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={PROFILE_IMAGES[profile.id].src}
+                          alt={PROFILE_IMAGES[profile.id].alt}
+                          loading="lazy"
+                          className="aspect-[16/10] w-full object-cover"
+                        />
+                        <figcaption className="px-4 py-2.5 text-[11px] text-muted">
+                          Un primer móvil para estar conectado sin estar enganchado.
+                        </figcaption>
+                      </figure>
+                    ) : null}
+                    <div className="rounded-xl border border-line/[0.07] bg-line/[0.025] p-4 sm:p-5">
+                      <div className="mono-label mb-3">EN LA PRÁCTICA</div>
                     <ul className="space-y-2.5">
                       {profile.bullets.map((bullet) => (
                         <li key={bullet} className="flex gap-2.5 text-[12.5px] leading-relaxed text-fg/75">
@@ -129,6 +151,7 @@ export function Profiles() {
                     >
                       Ver configuración recomendada
                     </a>
+                    </div>
                   </div>
                 </div>
               </motion.div>
